@@ -16,7 +16,7 @@ export default function App() {
           {" "}
           <i className="far fa-compass" id="compass"></i>
         </button>
-        <Weather />
+        <Weather defaultCity = "London"/>
         <h3 className="forecast">5 day forecast</h3>
 
         <div className="5-day-forecast">
