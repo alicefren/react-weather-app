@@ -1,6 +1,3 @@
-import logo from './logo.svg';
-
-
 import './App.css';
 
 export default function App() {
@@ -87,7 +84,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      <a href="https://github.com/alicefren/react-weather-app">Open source code</a>
+      <a href="https://github.com/alicefren/react-weather-app" target = "_blank">Open source code</a>
     </div>
   );
 }
