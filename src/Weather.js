@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather (props) {
     const [weatherData, setWeatherData] = useState({ready: false});
@@ -12,7 +13,7 @@ export default function Weather (props) {
            humidity: response.data.main.humidity,
            city: response.data.name,
            description: response.data.weather[0].description,
-           date: "Monday 22nd February",
+           date: new Date(response.data.dt *1000),
         });
         
     }
@@ -24,7 +25,7 @@ export default function Weather (props) {
         <div className="card-group">
           <div className="card border-primary mb-3">
             <div className="card-body weather-today">
-              <h5 className="card-title todays-date">{weatherData.date}</h5>
+              <h5 className="card-title todays-date"><FormattedDate date={weatherData.date}/></h5>
               <img className="todays-icon"></img>
               <p className="card-text">
                 <img src="" classNameass="weather-icon"></img>
