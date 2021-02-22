@@ -1,5 +1,6 @@
 import React from "react";
 import Weather from "./Weather";
+
 import './App.css';
 
 export default function App() {
@@ -7,16 +8,7 @@ export default function App() {
     <div className="App">
       <div className="container">
       
-        <form className="search-bar">
-          <input type="text" placeholder="Search" />
-          <input type="submit" value="search" />
-        </form>
-
-        <button>
-          {" "}
-          <i className="far fa-compass" id="compass"></i>
-        </button>
-        <Weather defaultCity = "London"/>
+      <Weather defaultCity = "London"/>
         <h3 className="forecast">5 day forecast</h3>
 
         <div className="5-day-forecast">
