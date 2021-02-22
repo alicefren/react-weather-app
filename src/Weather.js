@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 export default function Weather () {
-    return (
-    <div className = "weather">
-    <h2 className="city">London</h2>
+    const [weatherData, setWeatherData] = useState({ready: false});
+
+    function handleResponse(response) {
+        setWeatherData ({
+           ready: true,
+           temperature: response.data.main.temp,
+           wind: response.data.wind.speed,
+           humidity: response.data.main.humidity,
+           city: response.data.name,
+           description: response.data.weather[0].description,
+           date: "Monday 22nd February",
+        });
+        
+    }
+
+    if (weatherData.ready) {
+        return (
+    <div className = "Weather">
+    <h2 className="city">{weatherData.city}</h2>
         <div className="card-group">
           <div className="card border-primary mb-3">
             <div className="card-body weather-today">
-              <h5 className="card-title todays-date">Today's date</h5>
+              <h5 className="card-title todays-date">{weatherData.date}</h5>
               <img className="todays-icon"></img>
               <p className="card-text">
                 <img src="" classNameass="weather-icon"></img>
                 <span className="temp-degrees"></span>
                 <a href="#" className="celsius-link active">
-                  {" "}
+                  {Math.round(weatherData.temperature)}
                   °C{" "}
                 </a>
                 |{" "}
@@ -33,14 +50,25 @@ export default function Weather () {
               <div className="other-weather-info">
                 <p>
                   {" "}
-                  Humidity: <span className="humidity">%</span>
+                  Humidity: <span className="humidity">{weatherData.humidity}%</span>
                   <br />
-                  Wind: <span className="wind">km/h</span>
+                  Wind: <span className="wind">{Math.round(weatherData.wind)}km/h</span>
                 </p>
               </div>
             </div>
           </div>
         </div>
     </div>
-    );
+    )
+
+    } else {
+
+    const apiKey = "5c043941096cfca1b8129a71701e2dcf";
+    let city = "London";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    
+    axios.get(apiUrl).then(handleResponse);
+    
+    return ("Loading...");
+    }
 }
