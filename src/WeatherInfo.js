@@ -1,5 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
+import TempConversion from "./TempConversion";
 
 export default function WeatherInfo(props) {
     return (
@@ -9,19 +11,10 @@ export default function WeatherInfo(props) {
           <div className="card border-primary mb-3">
             <div className="card-body weather-today">
               <h5 className="card-title todays-date"><FormattedDate date={props.data.date}/></h5>
-              <img className="todays-icon"></img>
-              <p className="card-text">
-                <img src="" className="weather-icon"></img>
-                <span className="temp-degrees"></span>
-                <a href="#" className="celsius-link active">
-                  {Math.round(props.data.temperature)}
-                  °C{" "}
-                </a>
-                |{" "}
-                <a href="#" className="fahrenheit-link">
-                  °F
-                </a>
-              </p>
+              <WeatherIcon code={props.data.icon} />
+                <p className="card-text" >{props.data.description}</p>
+              <TempConversion celsius={props.data.temperature}/>
+       
               <p className="description"></p>
               <div className="row align-items-start">
                 <div className="col">
