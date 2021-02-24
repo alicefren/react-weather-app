@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather (props) {
     const [weatherData, setWeatherData] = useState({ready: false});
@@ -42,14 +43,11 @@ export default function Weather (props) {
           <input type="text" placeholder="Search" onChange = {handleChange}/>
           <input type="submit" value="search" />
         </form>
-
-        <button>
-          {" "}
-          <i className="far fa-compass" id="compass"></i>
-        </button>
-        
+     
         <WeatherInfo data={weatherData}/>
-        </div>
+       
+        <WeatherForecast city={weatherData.city}/>
+         </div>
         )
     } else {
         search();   
