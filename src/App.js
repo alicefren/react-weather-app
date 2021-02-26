@@ -11,7 +11,9 @@ export default function App() {
       <Weather defaultCity = "London"/>
       
       </div>
+      <footer>
       <a href="https://github.com/alicefren/react-weather-app">Open source code</a>
+      </footer>
     </div>
   );
 }

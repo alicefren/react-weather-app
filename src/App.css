@@ -2,96 +2,15 @@ body {
   color: #532e4f;
 }
 
-button {
-  display: inline-block;
-  border-radius: 6px;
-  border: 1px solid #532e4f;
+footer {
+  text-align: center;
 }
 
-img {
+.App .container {
   display: block;
-  margin: 0 auto;
-}
-
-.container {
-  display: block;
-  margin: 0 auto;
-  width: 50%;
+  max-width: 600px;
   padding: 20px 0;
   background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
-  max-width: 500px;
   border-radius: 6px;
-}
-
-.search-bar {
-  margin-left: 50px;
-  padding: 0 0 0 20px;
-  display: inline-block;
-}
-
-.city,
-.forecast {
-  padding: 20px 0 20px 20px;
-}
-
-.card-group {
-  max-width: 90%;
   margin: 0 auto;
-  padding: 0 0;
-}
-
-.card-body {
-  color: #03506f;
-}
-
-.other-weather-info {
-  text-align: left;
-}
-
-.weather {
-  padding-top: 20px;
-}
-
-.card {
-  display: block;
-  text-align: center;
-  background: rgba(0, 0, 0, 0);
-  border: none;
-}
-
-.fa-sun,
-.fa-cloud-sun {
-  display: block;
-  text-align: center;
-  font-size: 60px;
-  padding: 10px 10px;
-}
-
-.todays-forecast {
-  padding: 10px 0 0 20px;
-  display: block;
-  max-width: 90%;
-}
-
-.row {
-  padding: 10px 0 0 20px;
-}
-
-.temp-degrees {
-  display: inline;
-}
-
-.celsius-link:link,
-.fahrenheit-link:link {
-  text-decoration: none;
-  color: #03506f;
-}
-
-.celsius-link:hover,
-.fahrenheit-link:hover {
-  text-decoration: underline;
-}
-
-#description {
-  text-transform: capitalize;
 }

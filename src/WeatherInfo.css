@@ -1,0 +1,30 @@
+.WeatherInfo {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.WeatherInfo h2 {
+  color: blue;
+  padding: 10 0 10 10;
+  margin: 10 0 10 10;
+}
+
+.WeatherInfo h5 {
+  display: inline;
+  font-size: 18px;
+  color: #837581;
+  padding: 10 0 10 10;
+  margin: 10 0 10 10;
+}
+
+.WeatherInfo .weather-description {
+  color: blue;
+  text-transform: capitalize;
+  padding: 10 0 10 10;
+  margin: 10 0 10 10;
+}
+
+.WeatherInfo .other-weather-info {
+  padding: 10 0 10 10;
+  margin: 10 0 10 10;
+}
