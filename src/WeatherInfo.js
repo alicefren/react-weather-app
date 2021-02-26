@@ -9,7 +9,7 @@ export default function WeatherInfo(props) {
     return (
     <div className = "weather-info">
     <h2 className="city">{props.data.city}</h2>
-    <h6 className="todays-date"> Last updated <FormattedDate date={props.data.date}/> </h6>
+    <h6 className="todays-date"> <span>Last updated on <FormattedDate date={props.data.date}/></span> </h6>
         <div className="weather-today row">
          <ul className="spacer col-1">
          </ul>
@@ -28,9 +28,6 @@ export default function WeatherInfo(props) {
           </ul>
           </div>
     </div>
-   
- 
-    
     );
 
 }
