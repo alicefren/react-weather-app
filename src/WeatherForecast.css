@@ -1,7 +1,11 @@
-.WeatherForecast h3 {
-  color: blue;
+.WeatherForecast p {
+  font-size: 14pt;
+  font-style: italic;
+  color: #4509eb;
   margin-left: 10px;
   padding-left: 10px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .WeatherForecast canvas {
@@ -10,4 +14,9 @@
 
 .WeatherForecast .forecast {
   margin-left: 5px;
+  color: #4509eb;
+}
+
+.WeatherForecast {
+  color: #4509eb;
 }

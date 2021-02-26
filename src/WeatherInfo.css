@@ -13,6 +13,10 @@ li {
   list-style: none;
 }
 
+.weather-info {
+  color: #6a0fa3;
+}
+
 .temp-conversion {
   font-size: 60px;
   padding: 0 0;
