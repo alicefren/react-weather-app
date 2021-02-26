@@ -7,31 +7,29 @@ import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
     return (
-    <div className = "WeatherInfo">
+    <div className = "weather-info">
     <h2 className="city">{props.data.city}</h2>
-         <div className="weather-today">
-              <h5 className="todays-date">Last updated <FormattedDate date={props.data.date}/></h5>
-               <p className ="weather-description">{props.data.description}</p>
-              <WeatherIcon code={props.data.icon} />
-               
-              <TempConversion celsius={props.data.temperature}/>
-              
-                <div className="max-min-temp row">
-                  <p className="max-min-temp col-2">Max temp {Math.round(props.data.max)}°C </p>
-                  <p className="max-min-temp col-2">Min temp {Math.round(props.data.min)}°C</p>
-                </div>
-              
-              <div className="other-weather-info">
-                <p>
-                  {" "}
-                  Humidity: <span className="humidity">{props.data.humidity}%</span>
-                  <br />
-                  Wind: <span className="wind">{Math.round(props.data.wind)}km/h</span>
-                </p>
-              </div>
-            </div>
+    <h6 className="todays-date"> Last updated <FormattedDate date={props.data.date}/> </h6>
+        <div className="weather-today row">
+         <ul className="spacer col-1">
+         </ul>
+         <ul className="weather col-3">
+              <li className ="weather-description">{props.data.description} </li>
+              <li> <WeatherIcon code={props.data.icon}/> </li>
+            </ul>
+            <ul className="temp-conversion col-3">
+              <li> <TempConversion celsius={props.data.temperature}/></li>
+            </ul>
+            <ul className="weather-extras col-3">
+              <li className="max-min-temp"> Max temp: {Math.round(props.data.max)}°C </li>
+              <li className="max-min-temp"> Min temp: {Math.round(props.data.min)}°C </li>
+              <li> Humidity: <span className="humidity">{props.data.humidity}%</span></li>
+              <li> Wind: <span className="wind">{Math.round(props.data.wind)}km/h</span></li>
+          </ul>
+          </div>
     </div>
-        
+   
+ 
     
     );
 
