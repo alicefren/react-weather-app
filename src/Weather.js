@@ -43,15 +43,17 @@ export default function Weather (props) {
     if (weatherData.ready) {
         return (
         <div className = "SearchCity">
-            <form className="searchBar" onSubmit = {handleSubmit}>
-          <input type="text" placeholder="Search" onChange = {handleChange}/>
-          <input type="submit" value="search" />
-        </form>
-     
+        <div className ="search">
+          <form className="searchBar" onSubmit={handleSubmit}>
+          <input className="searchInput" type="text" placeholder="Search" onChange={handleChange}/>{" "}
+          <input className="searchSubmit" type="submit" value="Search" />
+          </form>
+        </div>
+             
         <WeatherInfo data={weatherData}/>
        
         <WeatherForecast city={weatherData.city}/>
-         </div>
+        </div>
         )
     } else {
         search();   
